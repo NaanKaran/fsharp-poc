@@ -1,0 +1,11 @@
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\bin\Debug\net6.0\PaymentService.Types.deps.json
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\bin\Debug\net6.0\PaymentService.Types.dll
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\bin\Debug\net6.0\PaymentService.Types.pdb
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\bin\Debug\net6.0\PaymentService.Types.xml
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.fsproj.AssemblyReference.cache
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.AssemblyInfoInputs.cache
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.AssemblyInfo.fs
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.fsproj.CoreCompileInputs.cache
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.dll
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.xml
+D:\POC\Fsharp\PaymentServiceAPI\PaymentService.Types\obj\Debug\net6.0\PaymentService.Types.pdb

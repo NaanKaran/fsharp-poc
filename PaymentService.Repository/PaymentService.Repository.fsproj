@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="LCOTransactionRepository.fs" />
+    <Compile Include="Entity\LcoWallet.fs" />
+    <Compile Include="Entity\LCOWalletTransaction.fs" />
+    <Compile Include="DBContext.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.4" />
+    <PackageReference Include="SQLProvider" Version="1.3.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentService.Types\PaymentService.Types.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="7.0.300" />
+  </ItemGroup>
+
+</Project>

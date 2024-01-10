@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E6dwAPotqfEfCIeMM+rFxLXfUUYKZOe3VRm6fCDh0WeK8mifEGeCO9+9/pVuPWrZfS7c+ja2eJKrgeHV011+rg==",
+  "success": true,
+  "projectFilePath": "D:\\POC\\Fsharp\\PaymentServiceAPI\\PaymentService.Services\\PaymentService.Services.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Karunakaran\\.nuget\\packages\\fsharp.core\\7.0.300\\fsharp.core.7.0.300.nupkg.sha512"
+  ],
+  "logs": []
+}
