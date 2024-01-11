@@ -2,7 +2,7 @@
 open FSharp.Data
 open PaymentService.Types.Enums
 open System
-
+open Dapper.FSharp.MSSQL
 
 module LCOTransactionRepository =
     let GetFile = 
@@ -36,5 +36,7 @@ module LCOTransactionRepository =
             let sumOfCreditValues = GetCreditTransaction
             let sumOfDebitValues = GetDebitTransaction None
             sumOfCreditValues - sumOfDebitValues
+
+
             
         

@@ -32,7 +32,6 @@ module Program =
             c.SwaggerDoc("v1", OpenApiInfo(Title = "My API", Version = "v1")))
 
 
-
         let app = builder.Build()
 
         // Enable middleware to serve generated Swagger as a JSON endpoint

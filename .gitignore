@@ -1,0 +1,11 @@
+﻿PaymentServiceAPI/bin
+PaymentService.Repository/bin
+PaymentService.Repository/obj
+PaymentService.Services/obj
+PaymentService.Services/bin
+PaymentService.UnitTest/obj
+PaymentService.UnitTest/bin
+PaymentService.Types/bin
+PaymentService.Types/obj
+PaymentServiceAPI/obj
+.vs/

@@ -3,13 +3,13 @@ open System
 open PaymentService.Types.Enums
 
 type LcoWallet = {
-    Id: string
+    Id: int 
     LcoId: string
     BusinessName: string
     Balance: decimal
     LastTransactionDate: DateTime
     LastTransactionAmount: decimal
-    LastTransactionType: TransactionType
+    LastTransactionType: int
     LastTransactionId: string
     CreatedAt: DateTime
     UpdatedAt: DateTime
