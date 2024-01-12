@@ -5,14 +5,23 @@ open PaymentService.Repository.Entity
 
 
 module TransactionRepository =
-    let histories =
-        select {
-            for row in DBContext.TransactionHistoryTable do
-                selectAll
-        }
-        |> DBContext.connection.SelectAsync<LcoWallet>
-        |> Async.AwaitTask
-        |> Async.RunSynchronously
+    type Pagination = { PageNumber: int; PageSize: int }
+
+    let histories (pagination: Pagination) =
+        let arrayOfhistories =
+            select {
+                for row in DBContext.TransactionHistoryTable do
+                    orderBy row.BusinessName
+                    skip (pagination.PageNumber * pagination.PageSize)
+                    take pagination.PageSize
+                    selectAll
+
+            }
+            |> DBContext.connection.SelectAsync<LcoWallet>
+            |> Async.AwaitTask
+            |> Async.RunSynchronously
+
+        arrayOfhistories
 
     let getHistoryByBusinessName business_name =
         select {

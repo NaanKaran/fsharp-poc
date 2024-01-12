@@ -10,10 +10,10 @@ open PaymentService.Repository
 type TransactionController(logger: ILogger<TransactionController>) =
     inherit ControllerBase()
 
-    [<HttpGet>]
+    [<HttpPost>]
     [<Route("getHistory")>]
-    member _.GetHistory() =
-        let history = TransactionRepository.histories
+    member _.GetHistory(payload: TransactionRepository.Pagination) =
+        let history = TransactionRepository.histories payload
         history
 
     [<HttpGet>]
