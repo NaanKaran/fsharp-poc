@@ -10,6 +10,7 @@
     <Compile Include="Entity\LcoWallet.fs" />
     <Compile Include="Entity\LCOWalletTransaction.fs" />
     <Compile Include="DBContext.fs" />
+    <Compile Include="TransactionRepository.fs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,9 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'PaymentServiceAPI' " />
   <ItemGroup>
     <Compile Include="WeatherForecast.fs" />
     <Compile Include="Controllers\PaymentController.fs" />
+    <Compile Include="Controllers\TransactionController.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
