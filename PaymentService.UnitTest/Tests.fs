@@ -31,7 +31,7 @@ let ``Call GetAllTransaction`` () =
 let ``Call Database`` () =
     let histories =
         select {
-            for row in TransactionHistoryTable do
+            for row in LcoWalletTable do
                 selectAll
         }
         |> connection.SelectAsync<LcoWallet>

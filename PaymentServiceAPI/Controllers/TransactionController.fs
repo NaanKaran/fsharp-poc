@@ -11,31 +11,31 @@ type TransactionController(logger: ILogger<TransactionController>) =
     inherit ControllerBase()
 
     [<HttpPost>]
-    [<Route("getHistory")>]
-    member _.GetHistory(payload: TransactionRepository.Pagination) =
-        let history = TransactionRepository.histories payload
-        history
+    [<Route("getWallet")>]
+    member _.GetWallet(payload: TransactionRepository.Pagination) =
+        let wallet = TransactionRepository.getWalletList payload
+        wallet
 
     [<HttpGet>]
-    [<Route("getHistory/{business_name}")>]
-    member _.GetHistory(business_name) =
-        let history = TransactionRepository.getHistoryByBusinessName business_name
-        history
+    [<Route("getWallet/{business_name}")>]
+    member _.GetWallet(business_name) =
+        let wallet = TransactionRepository.getWalletByBusinessName business_name
+        wallet
 
     [<HttpPost>]
-    [<Route("addHistory")>]
-    member _.AddHistory(history) =
-        let history = TransactionRepository.addHistory history
-        history
+    [<Route("addWallet")>]
+    member _.AddWallet(wallet) =
+        let wallet = TransactionRepository.addWallet wallet
+        wallet
 
     [<HttpPut>]
-    [<Route("updateHistory")>]
-    member _.UpdateHistory(history) =
-        let history = TransactionRepository.updateHistory history
-        history
+    [<Route("updateWallet")>]
+    member _.UpdateWallet(wallet) =
+        let wallet = TransactionRepository.updateWallet wallet
+        wallet
 
     [<HttpDelete>]
-    [<Route("updateHistory/{business_name}")>]
-    member _.DeleteHistory(business_name) =
-        let history = TransactionRepository.deleteHistory business_name
+    [<Route("updateWallet/{business_name}")>]
+    member _.DeleteWallet(business_name) =
+        let history = TransactionRepository.deleteWallet business_name
         history
