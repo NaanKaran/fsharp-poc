@@ -11,6 +11,7 @@
     <Compile Include="Entity\LCOWalletTransaction.fs" />
     <Compile Include="DBContext.fs" />
     <Compile Include="TransactionRepository.fs" />
+    <Compile Include="TransactionHistoryRepository.fs" />
   </ItemGroup>
 
   <ItemGroup>

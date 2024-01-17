@@ -9,6 +9,7 @@
     <Compile Include="WeatherForecast.fs" />
     <Compile Include="Controllers\PaymentController.fs" />
     <Compile Include="Controllers\TransactionController.fs" />
+    <Compile Include="Controllers\TransactionHistoryController.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

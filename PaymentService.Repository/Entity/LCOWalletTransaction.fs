@@ -3,8 +3,7 @@
 open System
 
 type TransactionHistory =
-    { Id: string
-      LcoId: string
+    { LcoId: string
       BusinessName: string
       TransactionDate: DateTime
       TransactionAmount: decimal
@@ -12,5 +11,4 @@ type TransactionHistory =
       TransactionId: string
       CreatedAt: DateTime
       UpdatedAt: DateTime
-
-    }
+      Remarks: string }
