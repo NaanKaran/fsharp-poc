@@ -1,13 +1,14 @@
 ﻿namespace PaymentService.Repository.Entity
 
-open PaymentService.Types.Enums
 open System
 
-type LCOWalletTransaction = {
-    Id : Guid
-    LcoId : string
-    TransactionType : TransactionType
-    TransactionAmount : decimal
-    Balance : decimal
-    CreatedOn : DateTime
-}
+type TransactionHistory =
+    { LcoId: string
+      BusinessName: string
+      TransactionDate: DateTime
+      TransactionAmount: decimal
+      TransactionType: int
+      TransactionId: string
+      CreatedAt: DateTime
+      UpdatedAt: DateTime
+      Remarks: string }

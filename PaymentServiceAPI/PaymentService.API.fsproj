@@ -9,6 +9,7 @@
     <Compile Include="WeatherForecast.fs" />
     <Compile Include="Controllers\PaymentController.fs" />
     <Compile Include="Controllers\TransactionController.fs" />
+    <Compile Include="Controllers\TransactionHistoryController.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -18,6 +19,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageReference Include="Duende.IdentityServer" Version="6.3.8">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <PackageReference Include="Duende.AccessTokenManagement" Version="2.1.0">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

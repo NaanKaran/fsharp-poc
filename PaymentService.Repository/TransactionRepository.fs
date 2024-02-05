@@ -5,18 +5,27 @@ open PaymentService.Repository.Entity
 
 
 module TransactionRepository =
-    let histories =
-        select {
-            for row in DBContext.TransactionHistoryTable do
-                selectAll
-        }
-        |> DBContext.connection.SelectAsync<LcoWallet>
-        |> Async.AwaitTask
-        |> Async.RunSynchronously
+    type Pagination = { PageNumber: int; PageSize: int }
 
-    let getHistoryByBusinessName business_name =
+    let getWalletList (pagination: Pagination) =
+        let arrayOfhistories =
+            select {
+                for row in DBContext.LcoWalletTable do
+                    orderBy row.BusinessName
+                    skip (pagination.PageNumber * pagination.PageSize)
+                    take pagination.PageSize
+                    selectAll
+
+            }
+            |> DBContext.connection.SelectAsync<LcoWallet>
+            |> Async.AwaitTask
+            |> Async.RunSynchronously
+
+        arrayOfhistories
+
+    let getWalletByBusinessName business_name =
         select {
-            for row in DBContext.TransactionHistoryTable do
+            for row in DBContext.LcoWalletTable do
                 where (row.BusinessName = business_name)
                 selectAll
         }
@@ -24,28 +33,28 @@ module TransactionRepository =
         |> Async.AwaitTask
         |> Async.RunSynchronously
 
-    let addHistory (history: LcoWallet) =
+    let addWallet (wallet: LcoWallet) =
         insert {
-            into DBContext.TransactionHistoryTable
-            value history
+            into DBContext.LcoWalletTable
+            value wallet
         }
         |> DBContext.connection.InsertAsync
         |> Async.AwaitTask
         |> Async.RunSynchronously
 
-    let updateHistory (history: LcoWallet) =
+    let updateWallet (wallet: LcoWallet) =
         update {
-            for row in DBContext.TransactionHistoryTable do
-                set history
-                where (row.BusinessName = history.BusinessName)
+            for row in DBContext.LcoWalletTable do
+                set wallet
+                where (row.BusinessName = wallet.BusinessName)
         }
         |> DBContext.connection.UpdateAsync
         |> Async.AwaitTask
         |> Async.RunSynchronously
 
-    let deleteHistory business_name =
+    let deleteWallet business_name =
         delete {
-            for row in DBContext.TransactionHistoryTable do
+            for row in DBContext.LcoWalletTable do
                 where (row.BusinessName = business_name)
         }
         |> DBContext.connection.DeleteAsync
