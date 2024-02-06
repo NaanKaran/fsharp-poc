@@ -5,6 +5,7 @@ open PaymentService.Repository.Entity
 
 
 module TransactionRepository =
+    open PaymentService.Types.ViewModel
     type Pagination = { PageNumber: int; PageSize: int }
 
     let getWalletList (pagination: Pagination) =

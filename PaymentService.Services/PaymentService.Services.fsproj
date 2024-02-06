@@ -6,7 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="AutoMapping.fs" />
+    <Compile Include="TransactionHistoryService.fs" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentService.Repository\PaymentService.Repository.fsproj" />
+    <ProjectReference Include="..\PaymentService.Types\PaymentService.Types.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+  </ItemGroup>
 </Project>

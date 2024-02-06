@@ -31,7 +31,18 @@ module Program =
         builder.Services.AddControllers()
 
         // Register the Swagger generator
-        builder.Services.AddSwaggerGen(fun c -> c.SwaggerDoc("v1", OpenApiInfo(Title = "My API", Version = "v1")))
+        builder.Services.AddSwaggerGen(fun c ->
+            c.SwaggerDoc("v1", OpenApiInfo(Title = "My API", Version = "v1"))
+
+            c.AddSecurityDefinition(
+                "Bearer",
+                OpenApiSecurityScheme(
+                    In = ParameterLocation.Header,
+                    Description = "Please insert JWT with Bearer into field",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                )
+            ))
 
         builder.Services
             .AddIdentityServer()
@@ -44,8 +55,6 @@ module Program =
 
                    ) |]
             )
-            .AddInMemoryApiScopes([| ApiScope(Name = "api1", DisplayName = "API 1") |])
-            .AddInMemoryApiResources([| ApiResource(Name = "api1", DisplayName = "API 1") |])
 
 
 
@@ -53,6 +62,7 @@ module Program =
 
         // Enable middleware to serve generated Swagger as a JSON endpoint
         app.UseSwagger()
+
 
         // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint
         app.UseSwaggerUI(fun c -> c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"))

@@ -3,6 +3,7 @@
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 open PaymentService.Repository
+open PaymentService.Services
 
 
 [<ApiController>]
@@ -28,3 +29,10 @@ type TransactionHistoryController(logger: ILogger<TransactionHistoryController>)
     member _.GetTransactionHistory(payload: TransactionHistoryRepository.Payload) =
         let history = TransactionHistoryRepository.getTransationHistory payload
         history
+
+    [<HttpPost>]
+    [<Route("addAndUpdateTransactionHistory")>]
+    member _.AddAndUpdateTransactionHistory(history) =
+        let history = TransactionHistoryService.addAndUpdateTransactionHistory history
+        history
+

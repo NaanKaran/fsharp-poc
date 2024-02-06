@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <Compile Include="Enums\TransactionType.fs" />
-    <Compile Include="Library.fs" />
+    <Compile Include="ViewModel.fs" />
   </ItemGroup>
 
 </Project>

@@ -30,6 +30,9 @@
   <ItemGroup>
     <ProjectReference Include="..\PaymentService.Repository\PaymentService.Repository.fsproj" />
     <ProjectReference Include="..\PaymentService.Types\PaymentService.Types.fsproj" />
+    <ProjectReference Include="..\PaymentService.Services\PaymentService.Services.fsproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>
